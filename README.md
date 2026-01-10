@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# Savora | Premium Food & Beverage Experience
 
-This contains everything you need to run your app locally.
+Savora is a high-end, luxury café and dining application built with React, TypeScript, and Tailwind CSS. It features a complete guest reservation system and a private admin concierge console.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1wlFABCyzm67hK7QUJSbeevrxDTunW2i9
+## ✨ Features
+- **Artisanal Branding:** Custom typography and cinematic UI/UX.
+- **Dynamic Menu:** Live-updated seasonal menu management.
+- **Concierge Booking:** Real-time table reservation system.
+- **Admin Console:** Secure management dashboard for reservations and content.
+- **Responsive:** Fully optimized for mobile, tablet, and desktop.
 
-## Run Locally
+## 🚀 Deployment Instructions
 
-**Prerequisites:**  Node.js
+### 1. Local Development
+```bash
+npm install
+npm run dev
+```
 
+### 2. GitHub & Vercel
+1. Create a new repository on GitHub.
+2. Initialize and push your code:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit: Savora Luxury Experience"
+   git branch -M main
+   git remote add origin YOUR_REPO_URL
+   git push -u origin main
+   ```
+3. Go to [Vercel](https://vercel.com) and click **"Add New Project"**.
+4. Import your GitHub repository.
+5. Vercel will automatically detect the Vite settings and deploy.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🔑 Admin Access
+The management console can be accessed via the **Settings icon** in the header or at `/#/admin`.
+**Access Key:** `SAVORA2024`
+
+---
+© 2024 Savora Global. Designed for Excellence.
