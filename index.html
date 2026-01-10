@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savora | Premium Food & Beverage Experience</title>
+    <meta name="description" content="Savora - A sanctuary for gourmets. Indulge in artisanal coffees, seasonal delicacies, and a high-end café atmosphere in Mayfair. Book your table online.">
+    <meta name="keywords" content="luxury cafe, premium dining, specialty coffee, Mayfair cafe, Savora food, table booking">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #FDFCF7;
+            --color-gold: #C5A059;
+            --color-stone: #1C1917;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            background-color: var(--color-cream);
+        }
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-cream { background-color: var(--color-cream); }
+        .text-gold { color: var(--color-gold); }
+        .bg-gold { background-color: var(--color-gold); }
+        .border-gold { border-color: var(--color-gold); }
+        
+        /* Premium Animations */
+        @keyframes subtleZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        .animate-subtle-zoom {
+            animation: subtleZoom 20s ease-in-out infinite alternate;
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--color-cream); }
+        ::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 10px; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="bg-cream text-stone-900">
+    <div id="root"></div>
+</body>
+</html>

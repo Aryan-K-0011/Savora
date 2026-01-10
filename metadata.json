@@ -1,0 +1,7 @@
+{
+  "name": "Savora - Premium Café & Dining Experience",
+  "description": "The official luxury website for Savora. Features high-end UI/UX, real-time table booking, dynamic menu management, and a full admin concierge console.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
