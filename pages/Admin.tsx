@@ -17,7 +17,8 @@ import {
   ShieldCheck,
   Lock,
   Key,
-  Star
+  Star,
+  Image as ImageIcon
 } from 'lucide-react';
 import { MenuItem, Booking, Category } from '../types';
 
@@ -45,7 +46,7 @@ const Admin: React.FC<AdminProps> = ({ menu, setMenu, bookings, setBookings }) =
     description: '',
     price: 0,
     category: 'Breakfast',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800',
+    image: '',
     featured: false
   });
 
@@ -87,7 +88,7 @@ const Admin: React.FC<AdminProps> = ({ menu, setMenu, bookings, setBookings }) =
       };
       setMenu([...menu, item]);
       setIsAddingItem(false);
-      setNewItem({ name: '', description: '', price: 0, category: 'Breakfast', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800', featured: false });
+      setNewItem({ name: '', description: '', price: 0, category: 'Breakfast', image: '', featured: false });
     }
   };
 
@@ -292,7 +293,7 @@ const Admin: React.FC<AdminProps> = ({ menu, setMenu, bookings, setBookings }) =
         {activeTab === 'menu' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {isAddingItem && (
-              <div className="bg-white p-10 rounded-[48px] shadow-2xl border-2 border-dashed border-gold animate-in zoom-in-95">
+              <div className="bg-white p-10 rounded-[48px] shadow-2xl border-2 border-dashed border-gold animate-in zoom-in-95 h-fit">
                 <div className="flex items-center gap-3 mb-8 text-gold">
                   <Coffee size={24} />
                   <h4 className="font-bold serif italic text-2xl">New Creation</h4>
@@ -309,6 +310,7 @@ const Admin: React.FC<AdminProps> = ({ menu, setMenu, bookings, setBookings }) =
                       <option value="Main Course">Main Course</option>
                       <option value="Beverages">Beverages</option>
                       <option value="Desserts">Desserts</option>
+                      <option value="Specials">Specials</option>
                     </select>
                   </div>
                   <div className="space-y-2">
@@ -319,8 +321,26 @@ const Admin: React.FC<AdminProps> = ({ menu, setMenu, bookings, setBookings }) =
                     </div>
                   </div>
                   <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-stone-400 ml-2">Image URL</label>
+                    <div className="relative">
+                      <ImageIcon className="absolute left-6 top-1/2 -translate-y-1/2 text-gold" size={16} />
+                      <input 
+                        type="text" 
+                        placeholder="https://images.unsplash.com/..." 
+                        className="w-full pl-12 pr-6 py-4 bg-stone-50 border-none rounded-2xl outline-none text-sm font-medium focus:ring-2 focus:ring-gold transition-all" 
+                        value={newItem.image} 
+                        onChange={(e) => setNewItem({...newItem, image: e.target.value})} 
+                      />
+                    </div>
+                    {newItem.image && (
+                      <div className="mt-4 rounded-xl overflow-hidden h-32 border border-stone-100 shadow-inner bg-stone-50">
+                        <img src={newItem.image} alt="Preview" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800'; }} />
+                      </div>
+                    )}
+                  </div>
+                  <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-stone-400 ml-2">Description</label>
-                    <textarea placeholder="Ingredients, origin, pairing..." rows={4} className="w-full px-6 py-4 bg-stone-50 border-none rounded-2xl outline-none text-sm font-medium resize-none focus:ring-2 focus:ring-gold transition-all" value={newItem.description} onChange={(e) => setNewItem({...newItem, description: e.target.value})}></textarea>
+                    <textarea placeholder="Ingredients, origin, pairing..." rows={3} className="w-full px-6 py-4 bg-stone-50 border-none rounded-2xl outline-none text-sm font-medium resize-none focus:ring-2 focus:ring-gold transition-all" value={newItem.description} onChange={(e) => setNewItem({...newItem, description: e.target.value})}></textarea>
                   </div>
                   <div className="flex gap-4 pt-4">
                     <button onClick={handleAddMenuItem} className="flex-grow bg-stone-900 text-white py-5 rounded-2xl font-black text-xs tracking-widest hover:bg-gold transition-colors shadow-lg">CREATE ITEM</button>
